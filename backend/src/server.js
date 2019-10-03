@@ -1,6 +1,8 @@
 // Importando Dependencias e outras coisas
 const express = require("express");
 const mongoose = require("mongoose");
+const cors = require("cors");
+
 const routes = require("./routes");
 
 // Criando o App
@@ -20,6 +22,9 @@ mongoose.connect(
 // req.query = acessar query params (para filtros)
 // req.params = Acessar route params (para ediçao e delete)
 // req.body = Acessar corpo da requisiçao (Para criaçao e ediçao)
+
+// Cors
+app.use(cors());
 
 // Configurar o Express para usar json
 app.use(express.json());
